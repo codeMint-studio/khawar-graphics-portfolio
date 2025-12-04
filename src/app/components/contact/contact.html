@@ -1,0 +1,41 @@
+<div class="min-h-screen py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 ">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-5xl md:text-6xl font-bold text-center mb-6 text-white">Get In Touch</h2>
+    <p class="text-center text-gray-300 mb-16 text-lg">
+      Let's start creating something amazing together
+    </p>
+    
+    <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-10 rounded-3xl mb-12">
+      <h3 class="text-3xl font-bold mb-8 text-white text-center">Connect With Us</h3>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <a *ngFor="let link of socialLinks"
+           [href]="link.url" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           [class]="'flex items-center gap-4 p-6 bg-gradient-to-r rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg ' + link.gradient">
+          <lucide-icon [img]="link.icon" [size]="32" class="text-white"></lucide-icon>
+          <div>
+            <div class="font-semibold text-white text-lg">{{ link.name }}</div>
+            <div class="text-sm text-white/80">{{ link.username }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center bg-gradient-to-r from-amber-500 to-amber-600 p-10 rounded-3xl shadow-2xl">
+      <h3 class="text-3xl font-bold mb-4 text-slate-900">Ready to Start Your Project?</h3>
+      <p class="text-lg text-slate-800 mb-6">
+        Reach out today and let's discuss how we can bring your vision to life
+      </p>
+      <a 
+        href="https://wa.me/923230533523" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-semibold text-lg hover:bg-slate-800 transition-all duration-300 hover:scale-105">
+        <lucide-icon [img]="MessageCircle" [size]="20"></lucide-icon>
+        Message on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>

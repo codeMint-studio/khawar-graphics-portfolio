@@ -1,0 +1,79 @@
+<div class="services-page">
+  <div class="services-container">
+    <!-- Hero Section -->
+    <div class="services-hero">
+      <div class="hero-badge">Our Expertise</div>
+      <h1 class="services-main-title animate-fade-in-up">Professional Design Services</h1>
+      <p class="services-main-subtitle animate-fade-in-up animation-delay-400">
+        From concept to execution, we deliver comprehensive design solutions that elevate your brand 
+        and drive real business results. Every project is crafted with precision, creativity, and strategic thinking.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div *ngFor="let service of services; let i = index" 
+           class="service-card"
+           [style.animation-delay.ms]="i * 100">
+        <div class="service-icon-container">
+          <lucide-icon [img]="service.icon" [size]="40" class="service-icon"></lucide-icon>
+        </div>
+        <div class="service-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">
+            <span class="feature-dot"></span>
+            {{ feature }}
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="process-section">
+      <div class="section-header-center">
+        <h2 class="section-title-large animate-fade-in-up animation-delay-200">Our Design Process</h2>
+        <p class="section-subtitle-large animate-fade-in-up animation-delay-200">
+          A proven methodology that ensures exceptional results every time
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div *ngFor="let step of processSteps; let i = index" class="process-card">
+          <div class="process-number">{{ i + 1 }}</div>
+          <h4 class="process-title">{{ step.title }}</h4>
+          <p class="process-description">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <!-- CTA Section -->
+    <div class="cta-section-services">
+      <div class="cta-content-wrapper">
+        <div class="cta-icon-bg"></div>
+        <h2 class="cta-title">Ready to Elevate Your Brand?</h2>
+        <p class="cta-description">
+          Let's collaborate to create designs that not only look stunning but also drive meaningful results 
+          for your business. Get in touch today for a free consultation.
+        </p>
+        <div class="cta-buttons">
+          <button (click)="navigateToContact()" class="btn-cta-primary">
+            Start Your Project
+            <lucide-icon [img]="ChevronRight" [size]="20"></lucide-icon>
+          </button>
+          <button (click)="navigateToPortfolio()" class="btn-cta-secondary">
+            View Portfolio
+          </button>
+        </div>
+        <p class="cta-note">
+          <lucide-icon [img]="Clock" [size]="16"></lucide-icon>
+          Average response time: 2 hours
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

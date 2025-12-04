@@ -1,0 +1,101 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-container">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in-up">
+          Welcome to <span class="highlight">Khawar Graphics</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-in-up animation-delay-200">
+          Where ideas turn into bold, creative visuals
+        </p>
+      </div>
+      
+      <div class="hero-profile animate-fade-in animation-delay-400">
+        <div class="profile-glow"></div>
+        <img src="assets/images/about-logo.jpg" alt="Khawar Graphics" class="profile-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="about-container">
+      <!-- Introduction -->
+      <div class="intro-card">
+        <div class="card-icon">
+          <lucide-icon [img]="Sparkles" [size]="32"></lucide-icon>
+        </div>
+        <h2 class="section-title">Crafting Visual Excellence</h2>
+        <p class="intro-text">
+          With <strong>3+ years of experience</strong> in Adobe Photoshop & Illustrator, I design clean, modern, 
+          and eye-catching graphics that help brands stand out. From social media ads to branding, posters, 
+          and custom templates, every design is crafted with clarity, creativity, and purpose.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-overview">
+        <h2 class="section-heading">What I Create</h2>
+        <div class="services-grid">
+          <div *ngFor="let service of services" class="service-item">
+            <div class="service-icon">
+              <lucide-icon [img]="service.icon" [size]="28"></lucide-icon>
+            </div>
+            <h3>{{ service.title }}</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="experience-card">
+        <div class="exp-header">
+          <div class="exp-icon">
+            <lucide-icon [img]="Briefcase" [size]="32"></lucide-icon>
+          </div>
+          <div class="exp-content">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="exp-text">
+              My journey includes working as a <strong>Graphic Designer with KYLDs</strong>, creating impactful 
+              visuals for events and campaigns. This experience shaped my approach to design—strategic, 
+              creative, and always focused on delivering results.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="values-section">
+        <h2 class="section-heading">My Focus</h2>
+        <div class="values-grid">
+          <div *ngFor="let value of values" class="value-card">
+            <div class="value-icon">
+              <lucide-icon [img]="value.icon" [size]="32"></lucide-icon>
+            </div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- CTA -->
+      <div class="cta-card">
+        <h2 class="cta-title">Ready to Bring Your Vision to Life?</h2>
+        <p class="cta-text">
+          Let's collaborate to create powerful designs that make your brand stand out
+        </p>
+        <div class="cta-buttons">
+          <button (click)="navigateToContact()" class="btn-primary">
+            Get Started
+            <lucide-icon [img]="ChevronRight" [size]="20"></lucide-icon>
+          </button>
+          <button (click)="navigateToPortfolio()" class="btn-secondary">
+            View Portfolio
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

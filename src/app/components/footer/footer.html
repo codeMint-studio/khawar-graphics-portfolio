@@ -1,0 +1,98 @@
+<footer class="footer-main">
+  <div class="footer-top">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="Khawar Graphics Logo" class="footer-logo-img">
+          <div class="footer-logo-text">
+            <span class="text-amber">Khawar</span> Graphics
+          </div>
+        </div>
+        <p class="footer-tagline">Where your ideas turn into compelling designs</p>
+        <p class="footer-description">
+          Transforming brands through creative excellence and strategic design solutions. 
+          We bring your vision to life with professional graphics that make an impact.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a routerLink="/" class="footer-link">Home</a></li>
+          <li><a routerLink="/services" class="footer-link">Services</a></li>
+          <li><a routerLink="/portfolio" class="footer-link">Portfolio</a></li>
+          <li><a routerLink="/clients" class="footer-link">Clients</a></li>
+          <li><a routerLink="/about" class="footer-link">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links">
+          <li><a class="footer-link">Logo Design</a></li>
+          <li><a class="footer-link">Brand Identity</a></li>
+          <li><a class="footer-link">Social Media Graphics</a></li>
+          <li><a class="footer-link">Print Materials</a></li>
+          <li><a class="footer-link">Advertising Banners</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Get In Touch</h3>
+        <ul class="footer-contact">
+          <li class="contact-item">
+            <lucide-icon [img]="MessageCircle" [size]="18" class="contact-icon"></lucide-icon>
+            <a href="https://wa.me/923230533523" target="_blank" class="footer-link">
+              +92 323 0533523
+            </a>
+          </li>
+          <li class="contact-item">
+            <lucide-icon [img]="Instagram" [size]="18" class="contact-icon"></lucide-icon>
+            <a href="https://instagram.com/khawargraphics" target="_blank" class="footer-link">
+              @khawargraphics
+            </a>
+          </li>
+          <li class="contact-item">
+            <lucide-icon [img]="Facebook" [size]="18" class="contact-icon"></lucide-icon>
+            <a href="https://facebook.com/khawargraphics" target="_blank" class="footer-link">
+              /khawargraphics
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social Media Icons -->
+        <div class="footer-social">
+          <a *ngFor="let link of socialLinks"
+             [href]="link.url" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="social-icon">
+            <lucide-icon [img]="link.icon" [size]="20"></lucide-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © {{ currentYear }} Khawar Graphics. All rights reserved.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <span class="separator">•</span>
+          <a href="#" class="footer-bottom-link">Terms of Service</a>
+          <span class="separator">•</span>
+          <a routerLink="/contact" class="footer-bottom-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

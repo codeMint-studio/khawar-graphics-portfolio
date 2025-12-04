@@ -1,0 +1,150 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+nav.scrolled {
+  background:rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+  background-color: white;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo-khawar {
+  color: #f59e0b;
+}
+
+.logo-graphics {
+  color: white;
+  margin-left: 0.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #fbbf24;
+}
+
+.nav-links a.active {
+  color: #f59e0b;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+}
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(30, 41, 59, 0.98);
+  backdrop-filter: blur(10px);
+  margin: 0 1.5rem;
+  border-radius: 1rem;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+.mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: #f59e0b;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}

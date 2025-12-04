@@ -1,0 +1,151 @@
+<div class="clients-page">
+  <!-- Hero Section -->
+  <section class="clients-hero">
+    <div class="clients-container">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in-up">Trusted by Leading Organizations</h1>
+        <p class="hero-subtitle animate-fade-in-up animation-delay-200">
+          Partnering with educational institutions, NGOs, startups, and brands across Pakistan 
+          to create exceptional design solutions that drive results
+        </p>
+      </div>
+      
+      <!-- Client Illustrations -->
+      <div class="hero-illustrations animate-fade-in animation-delay-400">
+        <div class="illustration-item item-1">
+          <div class="illustration-circle">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="30" r="15" fill="#1e293b"/>
+              <circle cx="50" cy="70" r="25" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <span class="illustration-label">NGOs</span>
+        </div>
+        
+        <div class="illustration-item item-2">
+          <div class="illustration-circle">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="30" r="15" fill="#1e293b"/>
+              <circle cx="50" cy="70" r="25" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <span class="illustration-label">Schools</span>
+        </div>
+        
+        <div class="illustration-item item-3">
+          <div class="illustration-circle">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="30" r="15" fill="#1e293b"/>
+              <circle cx="50" cy="70" r="25" fill="#d97706"/>
+            </svg>
+          </div>
+          <span class="illustration-label">Startups</span>
+        </div>
+        
+        <div class="illustration-item item-4">
+          <div class="illustration-circle">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="30" r="15" fill="#1e293b"/>
+              <circle cx="50" cy="70" r="25" fill="#ea580c"/>
+            </svg>
+          </div>
+          <span class="illustration-label">Brands</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Main Clients -->
+  <section class="clients-content">
+    <div class="clients-container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Partnerships</h2>
+        <p class="section-subtitle">Long-term collaborations with trusted organizations</p>
+      </div>
+
+      <div class="clients-grid">
+        <div *ngFor="let client of featuredClients; let i = index" 
+             class="client-card"
+             [style.animation-delay.ms]="i * 100">
+          <div class="client-header">
+            <div class="client-logo-wrapper">
+              <img [src]="client.logo" [alt]="client.name" class="client-logo-image">
+            </div>
+            <div class="client-duration">{{ client.duration }}</div>
+          </div>
+          <h3 class="client-name">{{ client.name }}</h3>
+          <p class="client-location" *ngIf="client.location">
+            <lucide-icon [img]="MapPin" [size]="16"></lucide-icon>
+            {{ client.location }}
+          </p>
+          <p class="client-description">{{ client.description }}</p>
+          <div class="client-services">
+            <span *ngFor="let service of client.services" class="service-tag">
+              {{ service }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Clients -->
+  <section class="additional-clients">
+    <div class="clients-container">
+      <div class="section-header">
+        <h2 class="section-title">Additional Collaborations</h2>
+        <p class="section-subtitle">Diverse projects across industries</p>
+      </div>
+
+      <div class="additional-grid">
+        <div *ngFor="let client of additionalClients" class="additional-card">
+          <div class="additional-logo-wrapper">
+            <img [src]="client.logo" [alt]="client.name" class="additional-logo-image">
+          </div>
+          <div class="additional-content">
+            <h4>{{ client.name }}</h4>
+            <p>{{ client.description }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- And Many More Section -->
+      <div class="many-more-card">
+        <div class="many-more-icon">
+          <lucide-icon [img]="Users" [size]="48"></lucide-icon>
+        </div>
+        <h3>And Many More...</h3>
+        <p>
+          Collaborated with various educational institutions, NGOs, startups, and brands 
+          across Azad Kashmir and Pakistan, delivering tailored solutions in branding, 
+          digital media design, and promotional graphics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- CTA Section -->
+  <section class="clients-cta">
+    <div class="clients-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Start Your Project?</h2>
+        <p class="cta-description">
+          Join our growing list of satisfied clients and let's create something amazing together
+        </p>
+        <div class="cta-buttons">
+          <button (click)="navigateToContact()" class="btn-cta-primary">
+            Get Started
+            <lucide-icon [img]="ChevronRight" [size]="20"></lucide-icon>
+          </button>
+          <button (click)="navigateToPortfolio()" class="btn-cta-secondary">
+            View Portfolio
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,99 @@
+<div class="portfolio-page">
+  <!-- Hero Section -->
+  <section class="portfolio-hero">
+  <div class="portfolio-container">
+    <div class="hero-content-wrapper">
+      <!-- Badge -->
+      <div class="hero-badge animate-fade-in">
+        <lucide-icon [img]="Sparkles" [size]="16"></lucide-icon>
+        <span>Our Work</span>
+      </div>
+      
+      <!-- Title -->
+      <h1 class="hero-title animate-fade-in-up">
+        Creative Projects That <span class="highlight-text">Make an Impact</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="hero-subtitle animate-fade-in-up animation-delay-200">
+        Explore our portfolio of successful projects across branding, digital design, 
+        print materials, and social media campaigns
+      </p>
+
+      
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="hero-decoration decoration-1"></div>
+    <div class="hero-decoration decoration-2"></div>
+    <div class="hero-decoration decoration-3"></div>
+  </div>
+</section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio-content">
+    <div class="portfolio-container">
+      <div class="portfolio-grid">
+        <div *ngFor="let project of projects; let i = index" 
+             class="project-card"
+             [style.animation-delay.ms]="i * 100">
+          
+          <!-- Image Slider -->
+          <div class="project-image-wrapper">
+            <div class="aspect-ratio-box">
+              <img 
+                [src]="project.images[project.currentIndex]" 
+                [alt]="project.title"
+                class="project-image">
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <div class="slider-controls" *ngIf="project.images.length > 1">
+              <button 
+                class="slider-btn prev-btn" 
+                (click)="previousImage(i)"
+                [disabled]="project.currentIndex === 0">
+                <lucide-icon [img]="ChevronLeft" [size]="24"></lucide-icon>
+              </button>
+              <button 
+                class="slider-btn next-btn" 
+                (click)="nextImage(i)"
+                [disabled]="project.currentIndex === project.images.length - 1">
+                <lucide-icon [img]="ChevronRight" [size]="24"></lucide-icon>
+              </button>
+            </div>
+
+            <!-- Image Counter -->
+            <div class="image-counter" *ngIf="project.images.length > 1">
+              {{ project.currentIndex + 1 }} / {{ project.images.length }}
+            </div>
+
+            
+          </div>
+
+          <!-- Project Info -->
+          <div class="project-info">
+            <span class="project-category">{{ project.category }}</span>
+            <h3 class="project-title">{{ project.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="portfolio-cta">
+    <div class="portfolio-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Want to See Your Project Here?</h2>
+        <p class="cta-description">
+          Let's collaborate to create stunning designs that make your brand stand out
+        </p>
+        <button (click)="navigateToContact()" class="btn-cta">
+          Start Your Project
+          <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

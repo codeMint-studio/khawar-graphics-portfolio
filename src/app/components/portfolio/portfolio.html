@@ -1,0 +1,158 @@
+<div class="portfolio-page">
+  <!-- Hero Section -->
+  <section class="portfolio-hero">
+    <div class="portfolio-container">
+      <div class="hero-content">
+        <div class="profile-section animate-fade-in">
+          <div class="profile-image-wrapper">
+            <div class="profile-glow"></div>
+            <img src="assets/images/portfolio-logo.jpg" alt="Khawar Aziz" class="profile-image">
+          </div>
+          <div class="profile-badges">
+            <span class="badge">Graphic Designer</span>
+            <span class="badge">Branding Specialist</span>
+            <span class="badge">Visual Creator</span>
+          </div>
+        </div>
+        
+        <div class="hero-text animate-fade-in-up animation-delay-200">
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Khawar Aziz</span>
+          </h1>
+          <p class="hero-subtitle">
+            Transforming ideas into powerful visual experiences with 4+ years of creative excellence
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="portfolio-container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-card main-about">
+          <div class="card-icon">
+            <lucide-icon [img]="User" [size]="32"></lucide-icon>
+          </div>
+          <p class="about-text">
+            I'm <strong>Khawar Aziz</strong>, a passionate and dedicated Graphic Designer with <strong>4+ years</strong> 
+            of professional experience in creating impactful visual designs. Over the years, I've worked with various 
+            national and international organizations, as well as individual clients from different industries.
+          </p>
+          <p class="about-text">
+            These collaborations have strengthened my creative approach, expanded my design vision, and helped me 
+            deliver work that truly stands out. I began my journey by working with local teams and community-driven 
+            initiatives, and as my experience grew, so did my ability to understand brand identity, digital presence, 
+            and modern design standards.
+          </p>
+          <p class="about-text">
+            Today, I am confident in delivering clean, meaningful, and result-oriented visuals that represent brands 
+            in the best way possible.
+          </p>
+        </div>
+
+        <!-- E-Kashmir Section -->
+        <div class="ekashmir-card">
+          <div class="ekashmir-header">
+            <div class="ekashmir-logo-wrapper">
+              <img src="assets/images/E-kashmir.jpg" alt="E-Kashmir" class="ekashmir-logo">
+            </div>
+            <h3 class="ekashmir-title">Work with E-Kashmir</h3>
+          </div>
+          <p class="ekashmir-text">
+            I am also the founder of <strong>E-Kashmir</strong>, a platform created with the vision of empowering 
+            and supporting the people of Kashmir. Through E-Kashmir, I actively work—<strong>completely free of cost</strong>—to 
+            spread awareness, promote local talent, and create opportunities for youth across the region.
+          </p>
+          <p class="ekashmir-text">
+            This initiative allows me to use my skills for a greater purpose and contribute to the betterment of our community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="portfolio-container">
+      <div class="section-header">
+        <h2 class="section-title">Services I Provide</h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Comprehensive design solutions tailored to your needs</p>
+      </div>
+
+      <div class="services-grid">
+        <div *ngFor="let service of services; let i = index" 
+             class="service-card"
+             [style.animation-delay.ms]="i * 100">
+          <div class="service-icon">
+            <lucide-icon [img]="service.icon" [size]="28"></lucide-icon>
+          </div>
+          <h3 class="service-title">{{ service.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="portfolio-container">
+      <div class="stats-grid">
+        <div *ngFor="let stat of stats" class="stat-card">
+          <div class="stat-icon">
+            <lucide-icon [img]="stat.icon" [size]="32"></lucide-icon>
+          </div>
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="portfolio-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's Work Together</h2>
+        <p class="cta-description">
+          If you're looking for modern, clean, and professional design work for your brand or business, 
+          you can contact me anytime. I'm always open to new projects and collaborations.
+        </p>
+        <div class="cta-buttons">
+          <button (click)="navigateToContact()" class="btn-primary-cta">
+            <lucide-icon [img]="Mail" [size]="20"></lucide-icon>
+            Get in Touch
+          </button>
+          <button (click)="navigateToProjects()" class="btn-secondary-cta">
+            <lucide-icon [img]="Briefcase" [size]="20"></lucide-icon>
+            View Projects
+          </button>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://instagram.com/khawargraphics" target="_blank" class="social-link">
+            <lucide-icon [img]="Instagram" [size]="24"></lucide-icon>
+          </a>
+          <a href="https://facebook.com/khawargraphics" target="_blank" class="social-link">
+            <lucide-icon [img]="Facebook" [size]="24"></lucide-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/hafizkhawaraziz" target="_blank" class="social-link">
+            <lucide-icon [img]="Linkedin" [size]="24"></lucide-icon>
+          </a>
+          <a href="https://wa.me/923230533523" target="_blank" class="social-link">
+            <lucide-icon [img]="MessageCircle" [size]="24"></lucide-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
