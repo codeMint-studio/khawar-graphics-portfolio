@@ -1,6 +1,7 @@
 <footer class="footer-main">
-  <div class="footer-top">
-    <div class="footer-container">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-grid">
       <!-- Brand Column -->
       <div class="footer-brand">
         <div class="footer-logo">
@@ -11,8 +12,7 @@
         </div>
         <p class="footer-tagline">Where your ideas turn into compelling designs</p>
         <p class="footer-description">
-          Transforming brands through creative excellence and strategic design solutions. 
-          We bring your vision to life with professional graphics that make an impact.
+          Professional graphic design services with 3+ years of experience. Creating impactful visuals for brands across Pakistan.
         </p>
       </div>
 
@@ -20,79 +20,133 @@
       <div class="footer-column">
         <h3 class="footer-heading">Quick Links</h3>
         <ul class="footer-links">
-          <li><a routerLink="/" class="footer-link">Home</a></li>
-          <li><a routerLink="/services" class="footer-link">Services</a></li>
-          <li><a routerLink="/portfolio" class="footer-link">Portfolio</a></li>
-          <li><a routerLink="/clients" class="footer-link">Clients</a></li>
-          <li><a routerLink="/about" class="footer-link">About Us</a></li>
+          <li><a (click)="scrollToSection('home')" class="footer-link">Home</a></li>
+          <li><a (click)="scrollToSection('services')" class="footer-link">Services</a></li>
+          <li><a (click)="scrollToSection('projects')" class="footer-link">Portfolio</a></li>
+          <li><a (click)="scrollToSection('about')" class="footer-link">About</a></li>
+          <li><a (click)="scrollToSection('contact')" class="footer-link">Contact</a></li>
         </ul>
       </div>
 
       <!-- Services -->
       <div class="footer-column">
-        <h3 class="footer-heading">Our Services</h3>
+        <h3 class="footer-heading">Services</h3>
         <ul class="footer-links">
           <li><a class="footer-link">Logo Design</a></li>
           <li><a class="footer-link">Brand Identity</a></li>
-          <li><a class="footer-link">Social Media Graphics</a></li>
-          <li><a class="footer-link">Print Materials</a></li>
-          <li><a class="footer-link">Advertising Banners</a></li>
+          <li><a class="footer-link">Social Media</a></li>
+          <li><a class="footer-link">Print Design</a></li>
+          <li><a class="footer-link">Ad Creatives</a></li>
         </ul>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Contact -->
       <div class="footer-column">
-        <h3 class="footer-heading">Get In Touch</h3>
+        <h3 class="footer-heading">Contact</h3>
         <ul class="footer-contact">
           <li class="contact-item">
-            <lucide-icon [img]="MessageCircle" [size]="18" class="contact-icon"></lucide-icon>
-            <a href="https://wa.me/923230533523" target="_blank" class="footer-link">
-              +92 323 0533523
-            </a>
+            <lucide-icon [img]="MapPin" [size]="16"></lucide-icon>
+            <span>Azad Kashmir, Pakistan</span>
           </li>
           <li class="contact-item">
-            <lucide-icon [img]="Instagram" [size]="18" class="contact-icon"></lucide-icon>
-            <a href="https://instagram.com/khawargraphics" target="_blank" class="footer-link">
-              @khawargraphics
-            </a>
+            <lucide-icon [img]="Phone" [size]="16"></lucide-icon>
+            <a href="https://wa.me/923230533523" target="_blank">+92 323 0533523</a>
           </li>
           <li class="contact-item">
-            <lucide-icon [img]="Facebook" [size]="18" class="contact-icon"></lucide-icon>
-            <a href="https://facebook.com/khawargraphics" target="_blank" class="footer-link">
-              /khawargraphics
-            </a>
+            <lucide-icon [img]="Mail" [size]="16"></lucide-icon>
+            <span>Available 24/7</span>
           </li>
         </ul>
 
-        <!-- Social Media Icons -->
+        <!-- Social Links -->
         <div class="footer-social">
           <a *ngFor="let link of socialLinks"
              [href]="link.url" 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="social-icon">
-            <lucide-icon [img]="link.icon" [size]="20"></lucide-icon>
+             [title]="link.name"
+             class="social-link">
+            <lucide-icon [img]="link.icon" [size]="18"></lucide-icon>
           </a>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <div class="footer-container">
-      <div class="footer-bottom-content">
-        <p class="copyright">
-          © {{ currentYear }} Khawar Graphics. All rights reserved.
-        </p>
-        <div class="footer-bottom-links">
-          <a href="#" class="footer-bottom-link">Privacy Policy</a>
-          <span class="separator">•</span>
-          <a href="#" class="footer-bottom-link">Terms of Service</a>
-          <span class="separator">•</span>
-          <a routerLink="/contact" class="footer-bottom-link">Contact</a>
-        </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p class="copyright">© {{ currentYear }} Khawar Graphics. All rights reserved.</p>
+      </div>
+      <div class="footer-bottom-right">
+        <a (click)="openPrivacy()" class="footer-bottom-link">Privacy Policy</a>
+        <span class="separator">•</span>
+        <a (click)="openTerms()" class="footer-bottom-link">Terms of Service</a>
       </div>
     </div>
   </div>
+
+  <!-- Back to Top -->
+  <button 
+    class="back-to-top" 
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()">
+    <lucide-icon [img]="ChevronUp" [size]="24"></lucide-icon>
+  </button>
 </footer>
+
+<!-- Privacy Modal -->
+<div class="modal-overlay" [class.active]="showPrivacyModal" (click)="closePrivacy()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Privacy Policy</h2>
+      <button class="modal-close" (click)="closePrivacy()">
+        <lucide-icon [img]="X" [size]="24"></lucide-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h3>Information We Collect</h3>
+      <p>We collect information you provide directly to us when you contact us through our website or social media platforms.</p>
+      
+      <h3>How We Use Your Information</h3>
+      <p>We use the information we collect to respond to your inquiries, provide our services, and improve our offerings.</p>
+      
+      <h3>Information Sharing</h3>
+      <p>We do not sell, trade, or otherwise transfer your personal information to third parties. Your information is kept confidential and secure.</p>
+      
+      <h3>Contact Us</h3>
+      <p>If you have questions about this Privacy Policy, please contact us via WhatsApp or social media.</p>
+      
+      <p class="policy-date"><strong>Last updated:</strong> December 2025</p>
+    </div>
+  </div>
+</div>
+
+<!-- Terms Modal -->
+<div class="modal-overlay" [class.active]="showTermsModal" (click)="closeTerms()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Terms of Service</h2>
+      <button class="modal-close" (click)="closeTerms()">
+        <lucide-icon [img]="X" [size]="24"></lucide-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h3>Services</h3>
+      <p>Khawar Graphics provides professional graphic design services including logo design, brand identity, social media graphics, print materials, and advertising creatives.</p>
+      
+      <h3>Project Process</h3>
+      <p>All projects begin with a consultation to understand your requirements. Timelines and deliverables will be discussed and agreed upon before work begins.</p>
+      
+      <h3>Revisions</h3>
+      <p>We offer revisions as part of our service to ensure your satisfaction. The number of revisions will be discussed during project consultation.</p>
+      
+      <h3>Payment Terms</h3>
+      <p>Payment terms will be discussed and agreed upon for each project. We accept various payment methods for your convenience.</p>
+      
+      <h3>Intellectual Property</h3>
+      <p>Upon full payment, you receive full rights to the final approved designs. All preliminary designs and concepts remain property of Khawar Graphics.</p>
+      
+      <p class="policy-date"><strong>Last updated:</strong> December 2025</p>
+    </div>
+  </div>
+</div>

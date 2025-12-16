@@ -24,6 +24,41 @@ nav.scrolled {
   align-items: center;
 }
 
+/* Existing styles remain same, add these: */
+
+.nav-links a.active {
+  color: #f59e0b !important;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  border-radius: 2px;
+}
+
+.mobile-menu a.active {
+  color: #f59e0b !important;
+  background: rgba(245, 158, 11, 0.1);
+  padding-left: 1rem;
+  border-left: 3px solid #f59e0b;
+}
+
+/* Smooth transition for active state */
+.nav-links a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a.active {
+  transform: translateY(-2px);
+}
+
+
 .logo-link {
   display: flex;
   align-items: center;

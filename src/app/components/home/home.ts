@@ -2,11 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LucideAngularModule, Sparkles, ChevronRight, Award, Clock, Users } from 'lucide-angular';
 import { Router } from '@angular/router';
+import { Services } from '../services/services';
+import { About } from "../about/about";
+import { Clients } from "../clients/clients";
+import { Contact } from "../contact/contact";
+import { Projects } from "../projects/projects";
 
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, LucideAngularModule ],
+  imports: [CommonModule, LucideAngularModule, Services, About, Clients,  Contact, Projects],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -31,7 +36,7 @@ export class Home {
     icon: this.Clock,
     title: 'Fast Turnaround',
     description: 'Quick delivery without compromising quality, keeping your projects on schedule',
-    stat: 'Average 2-3 Days Delivery'
+    stat: 'Average 24-48 hours Delivery'
   },
   {
     icon: this.Users,
@@ -52,5 +57,10 @@ export class Home {
     this.router.navigate(['/contact']).then(() => {
       window.scrollTo(0, 0); 
     });;;
+  }
+
+  ngOnInit() {
+    // Scroll to top on component load
+    window.scrollTo(0, 0);
   }
 }

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { Router } from '@angular/router';
-import { LucideAngularModule, MapPin, ChevronRight, Users } from 'lucide-angular';
+import { LucideAngularModule, MapPin, ChevronRight, Users, Award } from 'lucide-angular';
 
 @Component({
   selector: 'app-clients',
@@ -10,10 +10,12 @@ import { LucideAngularModule, MapPin, ChevronRight, Users } from 'lucide-angular
   templateUrl: './clients.html',
   styleUrls: ['./clients.css']
 })
-export class Clients {
+export class Clients  {
+
   readonly MapPin = MapPin;
   readonly ChevronRight = ChevronRight;
   readonly Users = Users;
+  
 
   featuredClients = [
     {
@@ -96,16 +98,9 @@ export class Clients {
 
  
   constructor(private router: Router) {}
-
-  navigateToContact() {
-    this.router.navigate(['/contact']).then(() => {
-      window.scrollTo(0, 0); 
-    });;;
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-  navigateToPortfolio() {
-    this.router.navigate(['/portfolio']).then(() => {
-      window.scrollTo(0, 0); 
-    });;;
-  }
+  
 }
