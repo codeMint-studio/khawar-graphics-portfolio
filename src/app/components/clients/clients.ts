@@ -97,10 +97,6 @@ export class Clients  {
   ];
 
  
-  constructor(private router: Router) {}
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
+ 
   
 }

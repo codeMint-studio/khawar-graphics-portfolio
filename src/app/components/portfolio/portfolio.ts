@@ -37,7 +37,7 @@ export class Portfolio {
   ];
 
   stats = [
-    { icon: this.Award, number: '4+', label: 'Years Experience' },
+    { icon: this.Award, number: '3+', label: 'Years Experience' },
     { icon: this.UsersIcon, number: '50+', label: 'Projects Completed' },
     { icon: this.TrendingUp, number: '30+', label: 'Happy Clients' },
     { icon: this.Briefcase, number: '12+', label: 'Major Partners' }

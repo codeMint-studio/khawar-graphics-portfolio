@@ -72,7 +72,7 @@
   box-shadow: 0 20px 60px rgba(245, 158, 11, 0.4);
   object-fit: cover;
 }
-
+ 
 @media (min-width: 768px) {
   .profile-image {
     width: 250px;
